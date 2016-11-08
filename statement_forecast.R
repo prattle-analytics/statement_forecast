@@ -8,14 +8,6 @@ statement<-T
 
 df<-get_scores('frc', agg.level='daily', email="<your_username>", pwd="<your_password>")
 
-# df<-get_scores('frc', type='raw', email="bill@prattle.co", pwd="prattle15")
-# df$date<-as.Date(df$date)
-# df<-xts(df$resid, order.by=df$date)
-# names(df)<-'score'
-
-# df<-apply.daily(df, mean)
-
-
 dates<-as.Date(as.Date("1990-01-01"):as.Date(cutoffdate), origin="1970-01-01")
 
 empty<-xts(,order.by=dates)
