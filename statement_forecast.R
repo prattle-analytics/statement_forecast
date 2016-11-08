@@ -3,10 +3,12 @@ library(lubridate)
 library(forecast)
 library(xts)
 
+your_username = "your-username"
+your_password = "your-password"
 cutoffdate<-"2016-10-24"
 statement<-T
 
-df<-get_scores('frc', agg.level='daily', email="<your_username>", pwd="<your_password>")
+df<-get_scores('frc', agg.level='daily', email=your_username, pwd=your_password)
 
 dates<-as.Date(as.Date("1990-01-01"):as.Date(cutoffdate), origin="1970-01-01")
 
@@ -15,7 +17,7 @@ empty<-xts(,order.by=dates)
 df<-merge(empty,df,join="left")
 df<-na.locf(df)
 
-df2<-get_scores('frc', type='raw', email="bill@prattle.co", pwd="prattle15")
+df2<-get_scores('frc', type='raw', email=your_username, pwd=your_password)
 df_orig<-df2
 df2<-subset(df2, speaker %in% c("FOMC Statement", "Minutes FRC"))
 df2$statement[df2$speaker=="FOMC Statement"]<-1
