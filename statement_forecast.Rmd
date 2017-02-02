@@ -13,8 +13,8 @@ library(lubridate)
 library(forecast)
 library(xts)
 
-your_username = "bill@prattle.co"
-your_password = "prattle15"
+your_username = "your name"
+your_password = "your password"
 cutoffdate<-"2016-10-24"
 statement<-T
 
